@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node xpress"
+    "start": "node xpress",
+    "test": "nodemon xpress"
   },
   "keywords": [],
   "author": "",

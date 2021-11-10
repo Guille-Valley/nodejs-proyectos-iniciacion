@@ -7,13 +7,10 @@ app.set('views', __dirname + '/views')
 
 app.use(express.static(__dirname + '/public')) // Fijamos el directorio donde ira la web
 
+// Rutas Web (API)
+app.use('/', require('./router/rutasWeb'))
+app.use('/mascotas', require('./router/Mascotas'))
 
-app.get('/', (req, res) => {
-    res.render('index', { titulo: 'mi titulo del index dinámico' })
-})
-app.get('/servicios', (req, res) => {
-    res.render('servicios', { titulo: 'Mi título dinámico de servicios' })
-})
 
 app.use((req, res, next) => {
     res.status(404).render('404', {
