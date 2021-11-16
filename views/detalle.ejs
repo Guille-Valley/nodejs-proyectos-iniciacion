@@ -1,0 +1,27 @@
+<%- include("template/cabecera", {tituloWeb: 'Detalle de mascota' }) %>
+
+    <div class="container">
+        <h1>Detalle Mascota</h1>
+
+        <% if (error) { %>
+            <p>
+                <%= mensaje %>
+            </p>
+            <a href="/mascotas" class="btn btn-dark">Volver a mascotas</a>
+            <% } %>
+
+
+                <% if (!error) { %>
+                    <li>
+                        <%= mascota.id %> &nbsp;
+                            <%= mascota.nombre %>&nbsp;
+
+                                <%= mascota.descripcion %>
+                               
+                    </li>
+                    <% } %>
+    </div>
+
+
+
+    <%- include("template/footer") %>

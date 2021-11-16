@@ -1,5 +1,12 @@
 const express = require('express')
+const bodyParser = require('body-parser') // CRUD
 const app = express()
+
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
+// parse application/json
+app.use(bodyParser.json())
+
 
 require('dotenv').config()
 const port = process.env.PORT || 3000
@@ -13,7 +20,7 @@ mongoose.connect(uri,
     {useNewUrlParser: true, useUnifiedTopology: true}
     )
     .then(() => console.log('Base de datos conectada'))
-    .then(e => console.log(e))
+    //.then(e => console.log(e))
 
 // Motor de plantillas
 app.set('view engine', 'ejs')
